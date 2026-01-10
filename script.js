@@ -1,19 +1,25 @@
-let item =document.getElementById("item");
-let price =document.getElementById("price");
-let cati =document.getElementById("category");
-let h1 =document.getElementById("td1");
-let h2 =document.getElementById("td2");
-let cat =document.getElementById("td3");
+let item = document.getElementById("item");
+let price = document.getElementById("price");
+let cati = document.getElementById("category");
+let tbody = document.getElementById("tbody");
 
-function addme(){
-    localStorage.setItem("item",item.value);
-    localStorage.setItem("price",price.value);
-    localStorage.setItem("category",cati.value);
+
+function addme() {
+    localStorage.setItem("item", item.value);
+    localStorage.setItem("price", price.value);
+    localStorage.setItem("category", cati.value);
     abcd();
+    document.getElementById("item").value = "";
+    document.getElementById("price").value = "";
 }
-function abcd(){
-    h1.innerHTML =localStorage.getItem("item");
-    h2.innerHTML =localStorage.getItem("price");
-    cat.innerHTML =localStorage.getItem("category");
+function abcd() {
+    let item1 = localStorage.getItem("item");
+    let price1 = localStorage.getItem("price");
+    let category1 = localStorage.getItem("category");
+    tbody.innerHTML += ` <tr>
+                <td>${item1}</td>
+                <td>${price1}</td>
+                <td>${category1}</td>
+            </tr>`
 }
 
